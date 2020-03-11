@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head> 
+	<meta charset="UTF-8">
+		 <title> Numero primo </title>
+	<script>
+	function NumeroPrimo(n){
+
+	  	var x = document.getElementById("numero").value;
+	  	var n= Math.abs(x);
+		var i=2;
+		var qtd=0;
+				
+		var texto=" ";
+		
+
+if(n==0)
+		{
+			texto="O número " +x+ " é indefinido";
+		
+		document.getElementById("texto").innerHTML = texto;
+		return false;
+	}
+	else
+		
+
+		if(n==2 || n==1 || n==-1 || n==-2)
+		{
+			texto="O número " +n+ " é primo";
+		
+document.getElementById("texto").innerHTML = texto;
+}
+else
+
+
+	if(n>2)
+{
+
+		for(i=2;i<n;i++)
+		{
+			divisor=i;
+		
+		if(n % divisor==0)
+			
+			{
+				qtd++;
+			}
+	}
+}
+
+	if(qtd>=1)
+	{
+	texto="O número " +x+ " não é primo";
+document.getElementById("texto").innerHTML = texto;
+
+}
+	else
+
+		if(qtd==0)
+	{
+		texto="O número " +x+ " é primo";
+		document.getElementById("texto").innerHTML = texto;
+		
+	}
+
+	
+}
+
+	</script>
+</head>
+<body>
+	<h3 id="texto"> </h3>
+	<input type="number" id="numero"/>
+	<button onclick="javascript:NumeroPrimo()"> Executar </button>
+</body>
+</html>
